@@ -1,0 +1,19 @@
+{% extends 'success.html' %}
+{% block  content %}
+
+    <h2>Register</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Register</button>
+    </form>
+
+    {% if form.errors %}
+        <p style="color:red;">
+        {{ form.errors }}
+        </p>
+    {% endif %}
+
+{% endblock %}
