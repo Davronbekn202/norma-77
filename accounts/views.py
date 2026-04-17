@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import get_user_model
@@ -6,6 +7,11 @@ User = get_user_model()
 
 def home(request):
     return render(request,'success.html')
+
+@login_required
+def profile(request):
+    user = request.user
+    return render(request, 'profile.html', {'user': user})
 
 def register_view(request):
     if request.method == "POST":

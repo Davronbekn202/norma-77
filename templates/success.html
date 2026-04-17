@@ -62,12 +62,14 @@
             </form>
 
             <a href="{% url 'contact' %}">habar yuborish</a>
+            <a href="{% url 'profile' %}">profile</a>
         {% else %}
             <a href="{% url 'login' %}">Kirish</a>
             <a href="{% url 'register' %}">Ro‘yxatdan o‘tish</a>
         {% endif %}
     </div>
 </div>
+
 
 <div class="container">
     {% block content %}
