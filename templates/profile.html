@@ -6,4 +6,14 @@
 <p><b>Username:</b> {{ user.username }}</p>
 <p><b>Email:</b> {{ user.email }}</p>
 <p><b>Phone:</b> {{ user.phone_number }}</p>
+
+{% if user.role == 'admin' %}
+    <h2>Siz adminsiz</h2>
+
+{% elif user.role == 'teacher' %}
+    <h2>Siz o‘qituvchisiz</h2>
+
+{% else %}
+    <h2>Siz o‘quvchisiz</h2>
+{% endif %}
 {% endblock %}

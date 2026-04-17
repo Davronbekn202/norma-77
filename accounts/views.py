@@ -19,7 +19,7 @@ def register_view(request):
 
         if form.is_valid():
             user = form.save(commit=False)
-            user.set_password(form.cleaned_data["password1"])
+            user.role = 'student'
             user.save()
 
             return redirect('login')  # login sahifaga o‘tadi
