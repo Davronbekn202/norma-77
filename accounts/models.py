@@ -15,3 +15,4 @@ class CustomUser(AbstractUser):
         choices=Role.choices,
         default=Role.STUDENT
     )
+

@@ -9,4 +9,5 @@ urlpatterns = [
     path('success/', success_view, name='success'),
     path('account/',include('accounts.urls')),
     path('profile/', profile, name='profile'),
+    path('product/', include('firstapp.urls')),
 ]

@@ -60,7 +60,11 @@
                 {% csrf_token %}
                 <button class="logout-btn">Logout</button>
             </form>
-
+            {% if perms.firstapp.add_product %}
+    <a href="{% url 'product_create' %}">Product qo‘shish</a>
+{% else %}
+    <p>Ruxsat yo‘q</p>
+{% endif %}
             <a href="{% url 'contact' %}">habar yuborish</a>
             <a href="{% url 'profile' %}">profile</a>
         {% else %}
@@ -81,6 +85,12 @@
     {% endfor %}
 </p>
 
+<def>
+    {% for i in forms %}
+        <h3>{{ i.name }}</h3>
+        <h3>{{ i.price }}</h3>
+    {% endfor %}
+</def>
 <div class="container">
     {% block content %}
     {% endblock %}

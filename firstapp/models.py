@@ -4,6 +4,13 @@ class Contact(models.Model):
     full_name = models.CharField(max_length=150)
     email = models.EmailField()
     message = models.TextField()
-
     def __str__(self):
         return self.full_name
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.FloatField()
+
+    def __str__(self):
+        return self.name
+

@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render, redirect
+
+from firstapp.models import Product
 from .forms import RegisterForm
 from django.contrib.auth import get_user_model
 
@@ -35,3 +37,4 @@ def is_manager(user):
 @user_passes_test(is_manager)
 def manager_panel(request):
     return render(request, "manager_panel.html")
+
